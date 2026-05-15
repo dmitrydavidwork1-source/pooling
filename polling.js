@@ -100,6 +100,7 @@ async function poll() {
 // ---------- Safe wrapper ----------
 async function safePoll() {
   try {
+    await safeNotify('🚀 Старт пулинга...');
     await poll();
   } catch (err) {
     console.error('💥 Критическая ошибка в poll:', err);
@@ -142,5 +143,4 @@ process.on('SIGTERM', async () => {
 
 // ---------- Start ----------
 console.log('🚀 Старт пулинга...');
-await safeNotify('🚀 Старт пулинга...');
 safePoll();
