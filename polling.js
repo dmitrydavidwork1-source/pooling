@@ -142,5 +142,5 @@ process.on('SIGTERM', async () => {
 
 // ---------- Start ----------
 console.log('🚀 Старт пулинга...');
-await safeNotify('🚀 Старт пулинга...');
+safeNotify('🚀 Старт пулинга...');
 safePoll();
