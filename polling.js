@@ -5,7 +5,6 @@ const { exec } = require('child_process');
 const API_URL = process.env.API_URL;
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
-const TELEGRAM_CHAT_IDD = process.env.TELEGRAM_CHAT_IDD;
 
 // ==========================================
 
@@ -16,10 +15,6 @@ let errorCount = 0;
 async function sendTelegram(message) {
   await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
     chat_id: TELEGRAM_CHAT_ID,
-    text: message,
-  });
-  await axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
-    chat_id: TELEGRAM_CHAT_IDD,
     text: message,
   });
 }
