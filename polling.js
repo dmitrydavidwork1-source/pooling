@@ -59,9 +59,6 @@ async function poll() {
 
       await safeNotify(message);
 
-      // Windows popup (опционально)
-      exec('start cmd /k echo ORDER ALLOWED!', () => {});
-
       process.exit(0);
     } else {
       console.log('❌ allow_order = false');
